@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JADEX HQ | Executive Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="dashboard-layout">
+
+    <!-- Left Navigation Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <span class="brand-dot"></span>
+        <h2>JADEX HQ</h2>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="#overview" class="nav-item active">Overview</a>
+        <a href="#analytics" class="nav-item">Revenue Charts</a>
+        <a href="#transactions" class="nav-item">Recent Orders</a>
+        <a href="#brands" class="nav-item">Jadex Brands</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <span class="status-pill">&bull; All Systems Live</span>
+        <p>Jadex Ecosystem v2.6</p>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="main-wrapper">
+
+      <!-- Top Bar -->
+      <header class="topbar">
+        <div class="topbar-title">
+          <h1>Executive Overview</h1>
+          <p>Welcome back, Besties &mdash; here is your live ecosystem performance.</p>
+        </div>
+        <div class="topbar-controls">
+          <select id="timeframeSelect" class="period-select">
+            <option value="month">This Month</option>
+            <option value="quarter">Last Quarter</option>
+            <option value="year">Full Year 2026</option>
+          </select>
+          <div class="admin-badge">ADMIN</div>
+        </div>
+      </header>
+
+      <!-- 4 KPI Statistics Cards -->
+      <section id="overview" class="kpi-grid">
+        <article class="kpi-card">
+          <div class="kpi-top">
+            <span class="kpi-label">Total Revenue</span>
+            <span class="trend positive">+18.4%</span>
+          </div>
+          <h3 id="kpiRevenue">$148,920</h3>
+          <p class="kpi-sub">Across all 5 Jadex platforms</p>
+        </article>
+
+        <article class="kpi-card">
+          <div class="kpi-top">
+            <span class="kpi-label">Active Orders &amp; Bookings</span>
+            <span class="trend positive">+12.1%</span>
+          </div>
+          <h3 id="kpiOrders">1,428</h3>
+          <p class="kpi-sub">Storefront, dining &amp; travel</p>
+        </article>
+
+        <article class="kpi-card">
+          <div class="kpi-top">
+            <span class="kpi-label">VIP Subscribers</span>
+            <span class="trend positive">+24.6%</span>
+          </div>
+          <h3 id="kpiUsers">9,840</h3>
+          <p class="kpi-sub">Jadex Films &amp; Academy learners</p>
+        </article>
+
+        <article class="kpi-card">
+          <div class="kpi-top">
+            <span class="kpi-label">Avg. Conversion Rate</span>
+            <span class="trend neutral">+2.3%</span>
+          </div>
+          <h3 id="kpiRate">4.8%</h3>
+          <p class="kpi-sub">Above industry benchmark</p>
+        </article>
+      </section>
+
+      <!-- Visual Charts Section -->
+      <section id="analytics" class="charts-grid">
+
+        <!-- Visual Chart 1: Monthly Growth Bar Chart -->
+        <div class="panel-card">
+          <div class="panel-header">
+            <h3>Monthly Revenue Growth</h3>
+            <span class="panel-tag">JAN &ndash; JUN 2026</span>
+          </div>
+          <div class="bar-chart">
+            <div class="bar-col">
+              <div class="bar-track"><div class="bar-fill" style="height: 48%;" data-val="$18k"></div></div>
+              <span>Jan</span>
+            </div>
+            <div class="bar-col">
+              <div class="bar-track"><div class="bar-fill" style="height: 62%;" data-val="$22k"></div></div>
+              <span>Feb</span>
+            </div>
+            <div class="bar-col">
+              <div class="bar-track"><div class="bar-fill" style="height: 55%;" data-val="$20k"></div></div>
+              <span>Mar</span>
+            </div>
+            <div class="bar-col">
+              <div class="bar-track"><div class="bar-fill" style="height: 76%;" data-val="$27k"></div></div>
+              <span>Apr</span>
+            </div>
+            <div class="bar-col">
+              <div class="bar-track"><div class="bar-fill" style="height: 84%;" data-val="$29k"></div></div>
+              <span>May</span>
+            </div>
+            <div class="bar-col">
+              <div class="bar-track"><div class="bar-fill highlight-bar" style="height: 96%;" data-val="$33k"></div></div>
+              <span>Jun</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Chart 2: Brand Share Donut Chart -->
+        <div class="panel-card">
+          <div class="panel-header">
+            <h3>Revenue by Jadex Brand</h3>
+            <span class="panel-tag">SHARE</span>
+          </div>
+          <div class="donut-wrapper">
+            <div class="donut-ring">
+              <div class="donut-hole">
+                <strong>100%</strong>
+                <span>Jadex Hub</span>
+              </div>
+            </div>
+            <ul class="donut-legend">
+              <li><span class="swatch s1"></span> Jadex Rocks (40%)</li>
+              <li><span class="swatch s2"></span> Jadex Voyages (30%)</li>
+              <li><span class="swatch s3"></span> Maison Jadex (18%)</li>
+              <li><span class="swatch s4"></span> Academy &amp; Films (12%)</li>
+            </ul>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Recent Transactions Table -->
+      <section id="transactions" class="panel-card table-panel">
+        <div class="panel-header">
+          <h3>Recent Ecosystem Activity</h3>
+          <input type="text" id="orderSearch" class="table-search" placeholder="Filter by client or brand...">
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Client Name</th>
+                <th>Jadex Brand</th>
+                <th>Item / Package</th>
+                <th>Amount</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="ordersTableBody">
+              <tr>
+                <td>#JX-9041</td>
+                <td>Amara Okafor</td>
+                <td>Jadex Rocks</td>
+                <td>Sovereign Cashmere Overcoat</td>
+                <td>$2,100</td>
+                <td><span class="badge success">Completed</span></td>
+              </tr>
+              <tr>
+                <td>#JX-9040</td>
+                <td>Chidinma Nwosu</td>
+                <td>Jadex Voyages</td>
+                <td>Santorini, Greece (7 Days)</td>
+                <td>$2,450</td>
+                <td><span class="badge vip">VIP Confirmed</span></td>
+              </tr>
+              <tr>
+                <td>#JX-9039</td>
+                <td>Tunde Adeyemi</td>
+                <td>Maison Jadex</td>
+                <td>Besties VIP Booth (6 Guests)</td>
+                <td>$480</td>
+                <td><span class="badge success">Completed</span></td>
+              </tr>
+              <tr>
+                <td>#JX-9038</td>
+                <td>Zara Mensah</td>
+                <td>Jadex Academy</td>
+                <td>Python &amp; Django Full-Stack</td>
+                <td>$49</td>
+                <td><span class="badge pending">In Progress</span></td>
+              </tr>
+              <tr>
+                <td>#JX-9037</td>
+                <td>Kemi Balogun</td>
+                <td>Jadex Films</td>
+                <td>4K HDR Annual VIP Pass</td>
+                <td>$120</td>
+                <td><span class="badge vip">VIP Confirmed</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+ <script src="script.js"></script> 
+</body>
+</html>
